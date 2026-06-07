@@ -97,6 +97,19 @@
     @media (min-width: 768px) {
       .video-frame { padding: 16px; }
     }
+
+    .skill-link {
+      color: #3E2723;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 183, 77, 0.55);
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    .skill-link:hover {
+      color: #FFB74D;
+      text-decoration-color: #FFC300;
+    }
   </style>
 </head>
 <body class="bg-cream text-warmbrown antialiased selection:bg-meituan/30">
@@ -237,15 +250,21 @@
               <ul class="space-y-2.5 pl-1">
                 <li class="flex gap-2">
                   <span class="text-warmorange font-bold shrink-0">·</span>
-                  <span><strong class="text-warmbrown font-medium">Satellite 行为特质提取</strong>：管家的「触角」，负责深度观察并动态提取用户的行为特质与隐式意图，实现专属 Skill 的自动化沉淀与智能自适应抽取。</span>
+                  <span>
+                    <a href="https://github.com/Sorcerer-Zhao/Satellite" target="_blank" rel="noopener noreferrer" class="skill-link">Satellite 行为特质与 Skill 提取</a>：管家的「触角」——自进化 MetaSkill（生成 Skill 的 Skill）。四阶段流水线：<code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">log_sniffer</code> 嗅探记忆日志与 TOOLS.md 能力缺口 → <code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">gateway_router</code> 研判行为特质与 Skill 机会（复用 / 封装 / 提案）→ <code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">executor_bridge</code> 自动编译 <code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">SKILL.md</code> + 执行代码至沙盒 → 用户确认后热挂载；同步提议更新 <code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">IDENTITY/SOUL/AGENTS/USER.md</code>。
+                  </span>
                 </li>
                 <li class="flex gap-2">
                   <span class="text-warmorange font-bold shrink-0">·</span>
-                  <span><strong class="text-warmbrown font-medium">schedule-reminder 后台提醒</strong>：管家的「大脑」，基于 Cron 机制实现全天候后台常驻守护，无缝联动高德地图 API，提供秒级响应的公交与地铁最优路径规划。</span>
+                  <span>
+                    <a href="https://github.com/Sorcerer-Zhao/schedule_reminder" target="_blank" rel="noopener noreferrer" class="skill-link">schedule-reminder 后台提醒</a>：管家的「大脑」，基于 Cron 机制实现全天候后台常驻守护，无缝联动高德地图 API，提供秒级响应的公交与地铁最优路径规划。
+                  </span>
                 </li>
                 <li class="flex gap-2">
                   <span class="text-warmorange font-bold shrink-0">·</span>
-                  <span><strong class="text-warmbrown font-medium">phone-call-skill 电话预约</strong>：管家的「双手」，打破数字世界壁垒，赋予其现实世界的跨媒介执行力，支持定时拨号与餐厅电话自动化语音预约。</span>
+                  <span>
+                    <a href="https://github.com/Sorcerer-Zhao/phone_call" target="_blank" rel="noopener noreferrer" class="skill-link">phone-call-skill 电话预约</a>：管家的「双手」，打破数字世界壁垒，赋予其现实世界的跨媒介执行力，支持定时拨号与餐厅电话自动化语音预约。
+                  </span>
                 </li>
                 <li class="flex gap-2">
                   <span class="text-warmorange font-bold shrink-0">·</span>
