@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全天候本地生活私人管家 · 美团 AI Hackathon</title>
+  <meta name="description" content="基于 OpenClaw 构建，7×24小时自主协同，用自然语言重塑本地生活服务。" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFF8E7',
+            linen: '#FAF0E6',
+            warmbrown: '#3E2723',
+            meituan: '#FFC300',
+            warmorange: '#FFB74D',
+            cardbg: '#FFFCF5',
+          },
+          fontFamily: {
+            sans: ['"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 8px 40px -8px rgba(62, 39, 35, 0.10)',
+            softer: '0 16px 48px -12px rgba(62, 39, 35, 0.12)',
+            glow: '0 0 0 1px rgba(255, 195, 0, 0.15), 0 12px 40px -8px rgba(255, 183, 77, 0.35)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 1px rgba(255, 195, 0, 0.15), 0 12px 40px -8px rgba(255, 183, 77, 0.35); }
+      50% { transform: scale(1.03); box-shadow: 0 0 0 1px rgba(255, 195, 0, 0.25), 0 16px 52px -6px rgba(255, 183, 77, 0.45); }
+    }
+    .btn-breathe { animation: breathe 3s ease-in-out infinite; }
+    .btn-breathe:hover { animation-play-state: paused; transform: scale(1.05); }
+
+    .flow-step {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      width: 20px;
+      height: 2px;
+      background: linear-gradient(90deg, #FFB74D, #FFC300);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    .flow-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 7px solid #FFC300;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    @media (max-width: 640px) {
+      .flow-step:not(:last-child)::after {
+        top: auto;
+        bottom: -14px;
+        right: 50%;
+        width: 2px;
+        height: 16px;
+        transform: translateX(50%);
+        background: linear-gradient(180deg, #FFB74D, #FFC300);
+      }
+      .flow-step:not(:last-child)::before {
+        top: auto;
+        bottom: -20px;
+        right: 50%;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid #FFC300;
+        border-bottom: none;
+        transform: translateX(50%);
+      }
+    }
+
+    .video-frame {
+      background: linear-gradient(145deg, #FFFCF5 0%, #FFF0D6 100%);
+      padding: 12px;
+    }
+    @media (min-width: 768px) {
+      .video-frame { padding: 16px; }
+    }
+  </style>
+</head>
+<body class="bg-cream text-warmbrown antialiased selection:bg-meituan/30">
+
+  <!-- ========== 1. Hero Section ========== -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-linen/80 via-cream to-cream pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-warmorange/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-meituan/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+
+        <!-- 左侧 / 上方：文本区 -->
+        <div class="flex-1 text-center lg:text-left">
+          <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 shadow-soft text-sm text-warmbrown/80 mb-6">
+            <span class="w-2 h-2 rounded-full bg-meituan animate-pulse"></span>
+            基于 OpenClaw 的全天候本地生活私人管家
+          </p>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-warmbrown mb-5">
+            <span class="text-warmorange">全天候</span>本地生活<br class="hidden sm:block" />
+            <span class="text-warmorange">私人</span>管家
+          </h1>
+
+          <p class="text-base sm:text-lg text-warmbrown/75 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+            基于 OpenClaw 构建，7×24 小时自主协同，用自然语言重塑本地生活服务。
+          </p>
+
+          <!-- 【预留链接：前端交互界面地址】请将下方 href 替换为你的 Web 前端 / XHAUS 控制台实际地址 -->
+          <a
+            href="#"
+            class="btn-breathe inline-flex items-center justify-center gap-2 px-8 py-4 rounded-3xl bg-meituan text-warmbrown font-semibold text-base sm:text-lg shadow-glow transition-all duration-300 hover:bg-warmorange"
+          >
+            👉 访问前端交互界面
+          </a>
+        </div>
+
+        <!-- 右侧 / 下方：视频区 -->
+        <div class="flex-1 w-full max-w-xl mx-auto lg:max-w-none">
+          <div class="video-frame rounded-3xl shadow-softer">
+            <div class="rounded-2xl overflow-hidden shadow-soft bg-warmbrown/5 aspect-video">
+              <!-- 【预留视频地址：沙盒演示视频 URL】请将下方 src 替换为你的演示视频文件路径 -->
+              <video
+                class="w-full h-full object-cover"
+                controls
+                playsinline
+                poster=""
+              >
+                <source src="#" type="video/mp4" />
+                您的浏览器暂不支持 HTML5 视频播放。
+              </video>
+            </div>
+          </div>
+          <p class="mt-4 text-center text-sm text-warmbrown/60">动态模拟沙盒演示流</p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== 2. 核心亮点区 ========== -->
+  <main class="bg-linen/40">
+    <section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-warmbrown mb-3">项目核心亮点</h2>
+        <p class="text-warmbrown/60 text-sm sm:text-base max-w-2xl mx-auto">
+          从人格塑造到自进化技能，从后台协同到多端触达——五大能力共同构成你的全天候私人管家
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+
+        <!-- 卡片 ① -->
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-warmbrown mb-3">专属管家塑造 <span class="text-warmbrown/50 font-normal text-sm">Identity &amp; Memory</span></h3>
+          <p class="text-sm text-warmbrown/70 leading-relaxed">
+            深度配置 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SOUL.md</code> 赋予管家独特人设（例如：将高人气角色「艾玛」的性格与特质成功蒸馏到 OpenClaw 中）。利用长效记忆机制，精准刻画并记住用户的长尾偏好，如口味忌口、高频通勤习惯与消费预算。
+          </p>
+        </article>
+
+        <!-- 卡片 ② -->
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-warmbrown mb-3">本地生活 Skill 开发</h3>
+          <p class="text-sm text-warmbrown/70 leading-relaxed">
+            严格遵循 OpenClaw 插件规范，编写 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SKILL.md</code> 及底层代码。已原生集成：
+            <strong class="text-warmbrown font-medium">schedule-reminder</strong>（Cron 后台提醒 + 高德公交/地铁路径规划）、
+            <strong class="text-warmbrown font-medium">phone-call-skill</strong>（餐厅电话预约与定时拨号）、
+            以及基于高德 API 的<strong class="text-warmbrown font-medium">地铁交通路线规划</strong>、<strong class="text-warmbrown font-medium">餐厅实时排队监控</strong>与<strong class="text-warmbrown font-medium">天气活动自动化抓取</strong>等核心本地生活技能，形成可插拔的 Skill 矩阵。
+          </p>
+        </article>
+
+        <!-- 卡片 ③ -->
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-warmbrown mb-3">7×24 小时自主协同</h3>
+          <p class="text-sm text-warmbrown/70 leading-relaxed mb-5">
+            突破传统 App 的一问一答模式，实现后台长效任务执行。依托 <strong class="text-warmbrown font-medium">Satellite 元技能</strong>，从近 72 小时记忆日志中嗅探行为模式（<code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">log_sniffer</code>），经网关层研判（<code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">gateway_router</code>）萃取用户特质并自动编译生成新 Skill（<code class="px-1 py-0.5 rounded bg-warmorange/10 text-xs">executor_bridge</code>），配合 Cron 定时任务实现全天候自主协同。
+          </p>
+
+          <!-- 流程图 -->
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-2 mt-2 p-4 rounded-2xl bg-gradient-to-r from-warmorange/8 to-meituan/8">
+            <div class="flow-step flex flex-col items-center text-center px-1">
+              <span class="text-xs font-semibold text-warmorange mb-1">①</span>
+              <span class="text-xs text-warmbrown/80 leading-snug">盯着海底捞排队</span>
+            </div>
+            <div class="flow-step flex flex-col items-center text-center px-1">
+              <span class="text-xs font-semibold text-warmorange mb-1">②</span>
+              <span class="text-xs text-warmbrown/80 leading-snug">剩 5 桌时主动提醒</span>
+            </div>
+            <div class="flow-step flex flex-col items-center text-center px-1">
+              <span class="text-xs font-semibold text-warmorange mb-1">③</span>
+              <span class="text-xs text-warmbrown/80 leading-snug">自动呼叫网约车</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 ④ -->
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-warmbrown mb-3">动态模拟沙盒 <span class="text-warmbrown/50 font-normal text-sm">Mock Backend</span></h3>
+          <p class="text-sm text-warmbrown/70 leading-relaxed">
+            自建 FastAPI 动态 Mock 后端底座。支持随机事件生成与非静态 JSON 返回，真实模拟例如「10 分钟内餐厅从有位突变为满座」的复杂现实交互场景，验证 Agent 的应急调度能力。
+          </p>
+        </article>
+
+        <!-- 卡片 ⑤ -->
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-warmbrown mb-3">全场景多端原生集成 <span class="text-warmbrown/50 font-normal text-sm">Web &amp; Mini-Program</span></h3>
+          <p class="text-sm text-warmbrown/70 leading-relaxed">
+            同时集成 <strong class="text-warmbrown font-medium">XHAUS 网页控制台</strong>（Node.js 后端 + WebSocket 流式对话）与<strong class="text-warmbrown font-medium">微信小程序</strong>前端，通过统一 API 网关代理 OpenClaw Gateway，支持管家性格实时切换与对话历史同步。提供多端无缝切换体验，打破平台壁垒，让全天候管家的主动服务触手可及。
+          </p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 3. Footer ========== -->
+  <footer class="bg-cream border-t border-warmbrown/5">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 text-center">
+      <p class="text-warmbrown/50 text-sm tracking-wide">2026 AI Hackathon</p>
+      <p class="text-warmbrown font-medium mt-1">Meituan OpenClaw Track</p>
+    </div>
+  </footer>
+
+</body>
+</html>
