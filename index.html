@@ -170,32 +170,64 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
 
         <!-- 卡片 ① -->
-        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 sm:col-span-2 lg:col-span-1">
           <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-warmbrown mb-3">专属管家塑造 <span class="text-warmbrown/50 font-normal text-sm">Identity &amp; Memory</span></h3>
-          <p class="text-sm text-warmbrown/70 leading-relaxed">
-            深度配置 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SOUL.md</code> 赋予管家独特人设（例如：将高人气角色「艾玛」的性格与特质成功蒸馏到 OpenClaw 中）。利用长效记忆机制，精准刻画并记住用户的长尾偏好，如口味忌口、高频通勤习惯与消费预算。
-          </p>
+          <h3 class="text-lg font-bold text-warmbrown mb-4">专属管家塑造 <span class="text-warmbrown/50 font-normal text-sm">Identity &amp; Memory</span></h3>
+          <div class="space-y-4 text-sm text-warmbrown/70 leading-relaxed">
+            <div>
+              <p class="font-semibold text-warmbrown mb-1.5">技术与人设</p>
+              <p>深度配置 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SOUL.md</code>、<code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">IDENTITY.md</code>、<code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">AGENTS.md</code> 及 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">USER.md</code> 核心架构。我们不仅内置了 Franziska、Sebas、Toru 以及将维多利亚女仆特质深度「蒸馏」的 Emma 等多元预设角色，更提供全自由度的「自定义管家」选项，亲手捏出你专属的数字陪伴者。</p>
+            </div>
+            <div>
+              <p class="font-semibold text-warmbrown mb-1.5">记忆与进化</p>
+              <p>依托长效记忆机制与自定义 Satellite Skill，管家能在日常相处中精准刻画用户的口味忌口、通勤习惯与消费预算等长尾偏好。</p>
+            </div>
+            <div>
+              <p class="font-semibold text-warmbrown mb-1.5">相处成默契</p>
+              <p>摆脱冷冰冰的单次指令，管家会在陪伴中持续迭代对用户画像的理解，实现「越用越懂你」的深度情感共鸣，让沟通毫无隔阂。</p>
+            </div>
+          </div>
         </article>
 
         <!-- 卡片 ② -->
-        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+        <article class="group bg-cardbg rounded-3xl p-6 sm:p-7 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 sm:col-span-2">
           <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-warmorange/30 to-meituan/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-6 h-6 text-warmorange" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-warmbrown mb-3">本地生活 Skill 开发</h3>
-          <p class="text-sm text-warmbrown/70 leading-relaxed">
-            严格遵循 OpenClaw 插件规范，编写 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SKILL.md</code> 及底层代码。已原生集成：
-            <strong class="text-warmbrown font-medium">schedule-reminder</strong>（Cron 后台提醒 + 高德公交/地铁路径规划）、
-            <strong class="text-warmbrown font-medium">phone-call-skill</strong>（餐厅电话预约与定时拨号）、
-            以及基于高德 API 的<strong class="text-warmbrown font-medium">地铁交通路线规划</strong>、<strong class="text-warmbrown font-medium">餐厅实时排队监控</strong>与<strong class="text-warmbrown font-medium">天气活动自动化抓取</strong>等核心本地生活技能，形成可插拔的 Skill 矩阵。
-          </p>
+          <h3 class="text-lg font-bold text-warmbrown mb-4">本地生活 Skill 开发 <span class="text-warmbrown/50 font-normal text-sm">Local Life Skill Matrix</span></h3>
+          <div class="space-y-4 text-sm text-warmbrown/70 leading-relaxed">
+            <div>
+              <p class="font-semibold text-warmbrown mb-1.5">规范生态与矩阵架构</p>
+              <p>严格遵循 OpenClaw 插件规范，精细化编写 <code class="px-1.5 py-0.5 rounded-lg bg-warmorange/10 text-warmbrown text-xs">SKILL.md</code> 与原子化底层代码，构建高内聚、低耦合的可插拔本地生活 Skill 矩阵。</p>
+            </div>
+            <div>
+              <p class="font-semibold text-warmbrown mb-2">三大核心技能链</p>
+              <ul class="space-y-2.5 pl-1">
+                <li class="flex gap-2">
+                  <span class="text-warmorange font-bold shrink-0">·</span>
+                  <span><strong class="text-warmbrown font-medium">Satellite 行为特质提取</strong>：管家的「触角」，负责深度观察并动态提取用户的行为特质与隐式意图，实现专属 Skill 的自动化沉淀与智能自适应抽取。</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="text-warmorange font-bold shrink-0">·</span>
+                  <span><strong class="text-warmbrown font-medium">schedule-reminder 后台提醒</strong>：管家的「大脑」，基于 Cron 机制实现全天候后台常驻守护，无缝联动高德地图 API，提供秒级响应的公交与地铁最优路径规划。</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="text-warmorange font-bold shrink-0">·</span>
+                  <span><strong class="text-warmbrown font-medium">phone-call-skill 电话预约</strong>：管家的「双手」，打破数字世界壁垒，赋予其现实世界的跨媒介执行力，支持定时拨号与餐厅电话自动化语音预约。</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-warmbrown mb-1.5">本地生活环境感知底座</p>
+              <p>原生集成高德 API 深度服务，实时监控热门餐厅排队动态，自动化抓取瞬时天气并智能联动日常出行，全面覆盖餐饮、出行、娱乐等高频场景，让主动陪伴真正落地。</p>
+            </div>
+          </div>
         </article>
 
         <!-- 卡片 ③ -->
