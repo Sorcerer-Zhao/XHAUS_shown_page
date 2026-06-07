@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>全天候本地生活私人管家 · 美团 AI Hackathon</title>
-  <meta name="description" content="基于 OpenClaw 构建，7×24小时自主协同，用自然语言重塑本地生活服务。" />
+  <title>XHAUS · 全天候本地生活私人管家</title>
+  <meta name="description" content="XHAUS — 基于 OpenClaw 构建的全天候本地生活私人管家，7×24 小时自主协同，用自然语言重塑本地生活服务。" />
+  <link rel="icon" href="assets/xhaus-logo.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -100,6 +101,21 @@
 </head>
 <body class="bg-cream text-warmbrown antialiased selection:bg-meituan/30">
 
+  <!-- 顶部品牌栏 -->
+  <nav class="sticky top-0 z-50 bg-cream/85 backdrop-blur-md border-b border-warmbrown/5">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img
+          src="assets/xhaus-logo.png"
+          alt="XHAUS 项目标识"
+          class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl shadow-soft object-cover ring-1 ring-warmbrown/5 group-hover:shadow-softer transition-shadow duration-300"
+        />
+        <span class="text-lg sm:text-xl font-bold tracking-tight text-warmbrown">XHAUS</span>
+      </a>
+      <span class="hidden sm:inline text-xs text-warmbrown/50 tracking-wide">2026 AI Hackathon</span>
+    </div>
+  </nav>
+
   <!-- ========== 1. Hero Section ========== -->
   <header class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-linen/80 via-cream to-cream pointer-events-none"></div>
@@ -111,10 +127,20 @@
 
         <!-- 左侧 / 上方：文本区 -->
         <div class="flex-1 text-center lg:text-left">
-          <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 shadow-soft text-sm text-warmbrown/80 mb-6">
-            <span class="w-2 h-2 rounded-full bg-meituan animate-pulse"></span>
-            基于 OpenClaw 的全天候本地生活私人管家
-          </p>
+          <div class="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-5 mb-6">
+            <img
+              src="assets/xhaus-logo.png"
+              alt="XHAUS"
+              class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl shadow-softer object-cover ring-2 ring-white/90"
+            />
+            <div class="text-center lg:text-left">
+              <p class="text-2xl sm:text-3xl font-bold tracking-tight text-warmbrown mb-1">XHAUS</p>
+              <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 shadow-soft text-xs sm:text-sm text-warmbrown/75">
+                <span class="w-1.5 h-1.5 rounded-full bg-meituan animate-pulse"></span>
+                基于 OpenClaw 的全天候本地生活私人管家
+              </p>
+            </div>
+          </div>
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-warmbrown mb-5">
             <span class="text-warmorange">全天候</span>本地生活<br class="hidden sm:block" />
@@ -291,9 +317,19 @@
 
   <!-- ========== 3. Footer ========== -->
   <footer class="bg-cream border-t border-warmbrown/5">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 text-center">
-      <p class="text-warmbrown/50 text-sm tracking-wide">2026 AI Hackathon</p>
-      <p class="text-warmbrown font-medium mt-1">Meituan OpenClaw Track</p>
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img
+          src="assets/xhaus-logo.png"
+          alt="XHAUS"
+          class="w-9 h-9 rounded-xl shadow-soft object-cover opacity-90"
+        />
+        <span class="text-lg font-bold text-warmbrown">XHAUS</span>
+      </div>
+      <div class="text-center">
+        <p class="text-warmbrown/50 text-sm tracking-wide">2026 AI Hackathon</p>
+        <p class="text-warmbrown font-medium mt-1">Meituan OpenClaw Track</p>
+      </div>
     </div>
   </footer>
 
